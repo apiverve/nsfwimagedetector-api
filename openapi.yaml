@@ -1,0 +1,87 @@
+openapi: 3.0.4
+info:
+  title: NSFW Image Detector
+  description: >-
+    NSFW Detector is a simple tool for detecting NSFW content. It returns a
+    boolean
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/nsfwimagedetector:
+    post:
+      summary: Detect NSFW
+      description: >-
+        NSFW Detector is a simple tool for detecting NSFW content. It returns a
+        boolean
+      operationId: nsfwimagedetector
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  isNSFW: false
+                  isSafe: true
+                  confidence: 0.987
+                  category: neutral
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: 'File to upload (accepted: .jpg, .jpeg, .png, .gif, max 10MB)'
+                  acceptedTypes:
+                    - .jpg
+                    - .jpeg
+                    - .png
+                    - .gif
+                  maxSizeMB: 10
+              required:
+                - image
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
+sampleRequest:
+  image: >-
+    https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/640px-Camponotus_flavomarginatus_ant.jpg
