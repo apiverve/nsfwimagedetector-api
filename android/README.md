@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:nsfwimagedetector-api:1.1.13'
+    implementation 'com.github.apiverve:nsfwimagedetector-api:1.1.14'
 }
 ```
 
@@ -47,7 +47,7 @@ NSFWImageDetectorAPIClient client = new NSFWImageDetectorAPIClient("YOUR_API_KEY
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("image", "");
+    parameters.put("image", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/640px-Camponotus_flavomarginatus_ant.jpg");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
