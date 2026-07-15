@@ -8,7 +8,7 @@ The NSFW Image Detector API provides a simple, reliable way to integrate nsfw im
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
-[![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
+[![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
 **Available on:**
@@ -30,11 +30,17 @@ The NSFW Image Detector API provides a simple, reliable way to integrate nsfw im
 ```javascript
 async function callNSFWImageDetectorAPI() {
     try {
+        const requestBody = {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/640px-Camponotus_flavomarginatus_ant.jpg"
+};
+
         const response = await fetch('https://api.apiverve.com/v1/nsfwimagedetector', {
-            method: 'GET',
+            method: 'POST',
             headers: {
-                'x-api-key': 'YOUR_API_KEY_HERE'
-            }
+                'x-api-key': 'YOUR_API_KEY_HERE',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
         });
 
         const data = await response.json();
@@ -50,8 +56,10 @@ callNSFWImageDetectorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/nsfwimagedetector?param=value" \
-  -H "x-api-key: YOUR_API_KEY_HERE"
+curl -X POST "https://api.apiverve.com/v1/nsfwimagedetector" \
+  -H "x-api-key: YOUR_API_KEY_HERE" \
+  -F "image=@/path/to/your-file"
+# Accepted formats: .jpg, .jpeg, .png, .gif (max 10MB)
 ```
 
 **Get your API key:** [https://apiverve.com](https://apiverve.com)
@@ -150,7 +158,7 @@ go get github.com/apiverve/nsfwimagedetector-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +177,7 @@ go get github.com/apiverve/nsfwimagedetector-api/go
 The NSFW Image Detector API is commonly used for:
 
 - **Web Applications** - Add nsfw image detector features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with nsfw image detector capabilities
 - **Data Pipelines** - Process and analyze data at scale
