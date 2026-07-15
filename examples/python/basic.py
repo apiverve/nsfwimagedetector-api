@@ -14,14 +14,20 @@ API_URL = 'https://api.apiverve.com/v1/nsfwimagedetector'
 
 def call_nsfwimagedetector_api():
     """
-    Make a GET request to the NSFW Image Detector API
+    Make a POST request to the NSFW Image Detector API
     """
     try:
+        # Request body
+        request_body &#x3D; {
+    &#x27;image&#x27;: &#x27;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/640px-Camponotus_flavomarginatus_ant.jpg&#x27;
+}
+
         headers = {
-            'x-api-key': API_KEY
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json'
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.post(API_URL, headers=headers, json=request_body)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
