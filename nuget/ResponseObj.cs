@@ -25,20 +25,35 @@ namespace APIVerve.API.NSFWImageDetector
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("isNSFW")]
-        public bool IsNsfw { get; set; }
+        public bool? IsNsfw { get; set; }
 
         [JsonProperty("isSafe")]
-        public bool IsSafe { get; set; }
+        public bool? IsSafe { get; set; }
 
         [JsonProperty("confidence")]
-        public double Confidence { get; set; }
+        public double? Confidence { get; set; }
 
         [JsonProperty("category")]
         public string Category { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
