@@ -15,7 +15,7 @@ async function callNSFWImageDetectorAPI() {
   try {
     // Request body
     const requestBody &#x3D; {
-    &quot;image&quot;: &quot;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/640px-Camponotus_flavomarginatus_ant.jpg&quot;
+    &quot;image&quot;: &quot;https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg&quot;
 };
 
     const response = await fetch(API_URL, {

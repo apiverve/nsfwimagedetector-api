@@ -2,8 +2,9 @@ openapi: 3.0.4
 info:
   title: NSFW Image Detector
   description: >-
-    NSFW Detector is a simple tool for detecting NSFW content. It returns a
-    boolean
+    NSFW Image Detector scans uploaded photos to determine whether an image
+    contains adult content. Send a JPG, PNG, or GIF file up to 10 MB to receive
+    safe and adult content boolean flags.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +19,7 @@ servers:
 paths:
   /v1/nsfwimagedetector:
     post:
-      summary: Detect NSFW
+      summary: NSFW Image Detector
       description: >-
         NSFW Detector is a simple tool for detecting NSFW content. It returns a
         boolean
@@ -66,12 +67,12 @@ paths:
                   type: string
                   format: binary
                   description: 'File to upload (accepted: .jpg, .jpeg, .png, .gif, max 10MB)'
-                  acceptedTypes:
+                  x-acceptedTypes:
                     - .jpg
                     - .jpeg
                     - .png
                     - .gif
-                  maxSizeMB: 10
+                  x-maxSizeMB: 10
               required:
                 - image
 components:
@@ -83,5 +84,4 @@ components:
 security:
   - api_key: []
 sampleRequest:
-  image: >-
-    https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/640px-Camponotus_flavomarginatus_ant.jpg
+  image: https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg

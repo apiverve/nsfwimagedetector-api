@@ -19,7 +19,7 @@ def call_nsfwimagedetector_api():
     try:
         # Request body
         request_body &#x3D; {
-    &#x27;image&#x27;: &#x27;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/640px-Camponotus_flavomarginatus_ant.jpg&#x27;
+    &#x27;image&#x27;: &#x27;https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg&#x27;
 }
 
         headers = {

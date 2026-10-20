@@ -1,13 +1,13 @@
-# [NSFW Image Detector API](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [NSFW Image Detector API](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-NSFW Detector is a simple tool for detecting NSFW content. It returns a boolean
+NSFW Image Detector scans uploaded photos to determine whether an image contains adult content. Send a JPG, PNG, or GIF file up to 10 MB to receive safe and adult content boolean flags.
 
 The NSFW Image Detector API provides a simple, reliable way to integrate nsfw image detector functionality into your applications. Built for developers who need production-ready nsfw image detector capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -31,7 +31,7 @@ The NSFW Image Detector API provides a simple, reliable way to integrate nsfw im
 async function callNSFWImageDetectorAPI() {
     try {
         const requestBody = {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/640px-Camponotus_flavomarginatus_ant.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg"
 };
 
         const response = await fetch('https://api.apiverve.com/v1/nsfwimagedetector', {
@@ -165,7 +165,7 @@ go get github.com/apiverve/nsfwimagedetector-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [NSFW Image Detector API](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [NSFW Image Detector API](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/nsfwimagedetector](https://docs.apiverve.com/ref/nsfwimagedetector)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -195,11 +195,31 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the NSFW Image Detector API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "isNSFW": false,
+    "isSafe": true,
+    "confidence": 0.987,
+    "category": "neutral"
+  }
 }
 ```
 
@@ -207,7 +227,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [NSFW Image Detector API](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [NSFW Image Detector API](https://apiverve.com/marketplace/nsfwimagedetector?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
