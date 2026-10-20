@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/nsfwimagedetector",
-  "version": "1.2.0",
-  "description": "NSFW Detector is a simple tool for detecting NSFW content. It returns a boolean",
+  "version": "1.2.2",
+  "description": "NSFW Image Detector scans uploaded photos to determine whether an image contains adult content. Send a JPG, PNG, or GIF file up to 10 MB to receive safe and adult content boolean flags.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "nsfw image detector", "nsfw image detection", "nsfw image detect api", "nsfw image detector api", "nsfw image detect"
+    "nsfw detection api", "nsfw image detection api", "nsfw image detector api", "nsfw content detector", "nsfw image detection"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/nsfwimagedetector-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/nsfwimagedetector?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/nsfwimagedetector?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
