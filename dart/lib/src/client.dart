@@ -51,7 +51,7 @@ final _formatPatterns = {
 /// For more information, visit: https://apiverve.com/marketplace/nsfwimagedetector?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [image] - Upload an image file containing the image needing classification (supported formats: JPG, PNG, GIF)
+/// * [image] - An image file to classify (JPG, PNG or GIF, up to 5 MB), or a public image URL
 class NsfwimagedetectorClient {
   final String apiKey;
   final String baseUrl;

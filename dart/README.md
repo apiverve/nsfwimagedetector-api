@@ -1,6 +1,6 @@
 # NSFW Image Detector API - Dart/Flutter Client
 
-NSFW Image Detector scans uploaded photos to determine whether an image contains adult content. Send a JPG, PNG, or GIF file up to 10 MB to receive safe and adult content boolean flags.
+NSFW Image Detector is an NSFW detection API that checks whether an image contains explicit adult content. Upload a JPG, PNG or GIF up to 5 MB, or pass an image URL, to get isNSFW and isSafe flags.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_nsfwimagedetector.svg)](https://pub.dev/packages/apiverve_nsfwimagedetector)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_nsfwimagedetector: ^1.2.5
+  apiverve_nsfwimagedetector: ^1.2.6
 ```
 
 Then run:
