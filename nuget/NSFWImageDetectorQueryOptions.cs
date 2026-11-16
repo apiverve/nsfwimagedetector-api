@@ -11,7 +11,7 @@ namespace APIVerve.API.NSFWImageDetector
     public class NSFWImageDetectorQueryOptions
     {
         /// <summary>
-        /// Upload an image file containing the image needing classification (supported formats: JPG, PNG, GIF)
+        /// An image file to classify (JPG, PNG or GIF, up to 5 MB), or a public image URL
         /// </summary>
         [JsonProperty("image")]
         public string Image { get; set; }
