@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_nsfwimagedetector"
-  spec.version       = "1.2.5"
+  spec.version       = "1.2.6"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "NSFW Image Detector API - Ruby Client"
-  spec.description   = "NSFW Image Detector scans uploaded photos to determine whether an image contains adult content. Send a JPG, PNG, or GIF file up to 10 MB to receive safe and adult content boolean flags."
+  spec.description   = "NSFW Image Detector is an NSFW detection API that checks whether an image contains explicit adult content. Upload a JPG, PNG or GIF up to 5 MB, or pass an image URL, to get isNSFW and isSafe flags."
   spec.homepage      = "https://apiverve.com/marketplace/nsfwimagedetector?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
